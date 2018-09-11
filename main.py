@@ -1,7 +1,7 @@
 from Coach import Coach
-from othello.OthelloGame import OthelloGame as Game
-from othello.pytorch.NNet import NNetWrapper as nn
-from utils import *
+from connect4.Connect4Game import Connect4Game
+from connect4.tensorflow.NNet import NNetWrapper as nn
+from utils import dotdict
 
 args = dotdict({
     'numIters': 1000,
@@ -21,7 +21,7 @@ args = dotdict({
 })
 
 if __name__=="__main__":
-    g = Game(6)
+    g = Connect4Game()
     nnet = nn(g)
 
     if args.load_model:
